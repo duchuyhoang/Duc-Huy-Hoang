@@ -1,0 +1,87 @@
+
+ <div class="bg">
+<div class="container ">
+    <div class="row">
+      <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+        <div class="card card-signin my-5">
+          <div class="card-body">
+            <h5 class="card-title text-center">Sign In</h5>
+            <form class="form-signin" [formGroup]="logInForm" method="POST" (ngSubmit)="onSubmit()"> 
+              <div class="form-label-group">
+                <i class='fas fa-user' style='font-size:1.5rem'></i>
+                <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus formControlName="loginEmail">
+                <div class="inputError" id="email-error"></div>
+                
+              </div>
+              
+
+              <div class="form-label-group">
+                <i class='fas fa-lock' style='font-size:1.5rem'></i>
+                <input type="password" id="inputPassword" class="form-control" placeholder="Password" required formControlName="loginPassword">
+                
+                <div class="inputError" id="password-error"></div>
+              </div>
+
+              <div class="custom-control custom-checkbox mb-3">
+                <input type="checkbox" class="custom-control-input" id="customCheck1">
+                <label class="custom-control-label" for="customCheck1">Remember password</label>
+              </div>
+              <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Sign in</button>
+              <hr >
+              <button class="btn btn-lg btn-google btn-block text-uppercase" type="submit"><i class="fab fa-google mr-2"></i> Sign in with Google</button>
+              <button class="btn btn-lg btn-facebook btn-block text-uppercase" type="submit"><i class="fab fa-facebook-f mr-2"></i> Sign in with Facebook</button>
+            </form>
+            <div class="pt-2 text-center">Dont have an account?<a [routerLink]="['/signup']" routerLinkActive="router-link-active" >Sign Up</a></div>
+      
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+  <!-- Modal -->
+
+  <div class="modal fade" id="emailError" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Email sai</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          {{loginError}}
+        </div>
+        <div class="modal-footer" >
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="passwordError" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Password error</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          {{passwordError}}
+        </div>
+        <div class="modal-footer" >
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+</div>

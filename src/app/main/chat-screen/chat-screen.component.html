@@ -1,0 +1,137 @@
+<body>
+  <div class="container-fluid">
+    <div class="row clear">
+      <div class=" col-sm-5 col-md-5 col-lg-5">
+
+
+
+
+      </div>
+
+      <div class="col-12 col-sm-7 col-md-7 col-lg-7">
+        <nav class="d-flex clear">
+          <div class="col-4 p-3 cursor-pointer">
+            <i class="fa fa-angle-left" style="font-size:48px;color:white"></i>
+
+          </div>
+
+          <div class="col-4 p-3 text-center">
+            <i class="fa fa-arrow-left" style="font-size:48px;color:red"></i>
+
+          </div>
+
+          <div class="col-4 p-3 text-right cursor-pointer position-relative">
+            <i class="fa fa-ellipsis-v position-relative" style="font-size:48px;color:red">
+            </i>
+            <div class="dropdown-menu">
+              amdakdmka
+            </div>
+          </div>
+
+
+        </nav>
+
+        <div class="d-flex flex-column lop">
+          <div id="chat" class="flex-grow-1">
+
+            <!-- <div class="your-time-container">
+              <div class="time-owner">12:45, 4 Tháng 11, 2020</div>
+            </div> -->
+
+            <!-- <div class="imageContainer">
+              <div class="yourImage">
+                <div class="img-wrapper">
+                <img src="../../assets/rong.jpg" alt="">
+              </div>
+              </div>
+            </div> -->
+
+  <!-- <div  class="message-owner">huyhoang10032000@gmail.com</div> -->
+            <!-- <div class="imageContainer">
+              <div class="theirImage">
+                <div class="img-wrapper">
+                <img src="https://firebasestorage.googleapis.com/v0/b/duchuyhoangchatapp.appspot.com/o/0phudzRXvD1dfcAPatKd%2Fanh_13.png?alt=media&token=de6648cf-cf09-49c4-abf7-3621399c27a9g" alt="">
+                <div class="message-time">02-010-1995</div>
+              </div>
+              </div>
+            </div>
+            <div class="message-owner">huyhoang10032000@gmail.com</div> -->
+            <!-- <div class="imageContainer">
+              <div class="theirImage">
+            
+              
+              <div class="img-wrapper">
+              <img src="../../assets/rong.jpg" alt="">
+              <div class="message-time">02-010-1995</div>
+              </div>
+            </div>
+            </div> -->
+
+            <!-- <div class="message-owner">huyhoang10032000@gmail.com</div> -->
+            <!-- <div class="message-wrapper ">
+
+              <div class="their-message">
+                <div class="message-time">02-010-1995</div>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae assumenda saepe, dolorum explicabo
+                dignissimos eum rem voluptatem earum repellendus nisi numquam delectus nesciunt? Porro reiciendis
+                quibusdam laudantium? Minus, inventore repudiandae!
+              </div>
+
+            </div> -->
+
+
+          </div>
+          <div class="send-message pb-2">
+            <form action="" method="post" [formGroup]="messageSend" (ngSubmit)="uploadMessage()" class="d-flex w-100">
+              <input type="text" placeholder="Messages here..." formControlName="message">
+              <div class="choose-send d-flex align-item-center">
+                <!-- <button> -->
+                <label for="myFile">
+                  <i class="fa fa-picture-o" aria-hidden="true"></i>
+                </label>
+                <!-- </button> -->
+                <button type="submit">
+                  <i class="fa fa-paper-plane " aria-hidden="true"></i>
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+
+
+      </div>
+
+    </div>
+
+  </div>
+
+</body>
+
+
+
+
+
+
+<!-- Hide -->
+<input type="file" id="myFile" size="50" (change)="uploadImage($event)" style="display: none" accept="*.png.jpg">
+
+<div class="modal fade" id="noMessage" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Chưa điền tin nhắn</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Điền tin nhắn đi
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+
+      </div>
+    </div>
+  </div>

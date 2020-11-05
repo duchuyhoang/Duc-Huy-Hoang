@@ -1,0 +1,90 @@
+
+<body>
+
+  <div class="modal fade" id="signUpStatus" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Sign up status</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          {{signUpStatus}}
+        </div>
+        <div class="modal-footer" >
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+
+
+
+
+    <div class="container bg">
+      <div class="row">
+        <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+          <div class="card card-signin my-5">
+            <div class="card-body">
+              <h5 class="card-title text-center">Sign up</h5>
+              <form class="form-signin" [formGroup]="formRegister" method="POST" (ngSubmit)="onSubmit()">
+
+<div class="form-label-group d-flex">
+<div class="first-name d-inline-block w-49">
+<input type="text" id="firstName" class="w-100 signUpName" placeholder="First name..." formControlName="firstName" >
+<div class="inputError d-inline-block" id="signUpFirstNameError" *ngIf="firstNameError">Nhập first name</div>
+</div>
+<div class="last-name d-inline-block w-49" id="lastName">
+<input type="text" id="lastName" class="w-100 signUpName" placeholder="Last name..." formControlName="lastName">
+<div class="inputError d-inline-block" id="signUpLastNameError" *ngIf="lastNameError">Nhập last name</div>
+</div>
+</div>
+
+                <div class="form-label-group">
+                  <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus
+                  formControlName="email">
+                  <label for="inputEmail"><i class='fas fa-user' style='font-size:24px'></i></label>
+                  <div class="inputError" *ngIf="emailError">Email sai định dạng</div>
+                  <div class="inputError" *ngIf="emailRequired">Nhập email</div>
+                </div>
+  
+                <div class="form-label-group">
+                  <input type="password" id="inputPassword" class="form-control" placeholder="Password" required
+                  formControlName="password"
+                  >
+                  <label for="inputPassword"><i class='fas fa-lock' style='font-size:24px'></i></label>
+                  <div class="inputError" *ngIf="firstPassError">Nhập password</div>
+                </div>
+
+                <div class="form-label-group">
+                  <input type="password" id="confirmPassword" class="form-control" placeholder="Confirm password" required
+                  formControlName="confirmPassword"
+                  >
+                  <label for="confirmPassword"><i class='fas fa-lock' style='font-size:24px'></i></label>
+                  <div class="inputError" *ngIf="confirmPassword">Nhập confirmPassword</div>
+                  <div class="inputError" *ngIf="passwordError">Hai password không giống</div>
+                </div>
+  
+                <div class="custom-control custom-checkbox mb-3">
+                  <input type="checkbox" class="custom-control-input" id="customCheck1">
+                  <label class="custom-control-label" for="customCheck1">Agree to our <a href="#">Term and Conditions</a></label>
+                </div>
+                <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Register</button>
+                <hr class="my-4">
+                <button class="btn btn-lg btn-google btn-block text-uppercase" type="submit"><i class="fab fa-google mr-2"></i> Sign up with Google</button>
+                <button class="btn btn-lg btn-facebook btn-block text-uppercase" type="submit"><i class="fab fa-facebook-f mr-2"></i> Sign up with Facebook</button>
+              </form>
+              <div class="pt-2 text-center">Already have an account?<a [routerLink]="['/login']" routerLinkActive="router-link-active" >Login</a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  </body>
